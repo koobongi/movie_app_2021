@@ -1,6 +1,7 @@
+import { scryRenderedDOMComponentsWithClass } from "react-dom/test-utils"
 
 
-const foodLik = [
+const foodLike = [
   {
     name: "chikin",
     image: "http://economychosun.com/query/upload/303/20190608214338_gubchoja.jpg"
@@ -11,17 +12,23 @@ const foodLik = [
   }
 ]
 
+
 function App() {
   return (
     <div>
-    <h1>Hello</h1>
-    <Food fav="kimchi" />
+      {
+        foodLike.map(dish => (<Food name={dish.name} picture={dish.image} />))
+      }
     </div>
   )
 }
 
-function Food(foo) {
-  const { fav } = foo
-  return <h1>I like {fav}</h1>
+function Food({name, picture}) {
+  return (
+  <div>
+    <h1>I like {name} </h1>
+    <img src={picture} />
+  </div>
+  )
 }
 export default App
