@@ -9,7 +9,7 @@ class App extends Component {
         console.log('componentDidMount')
     }
     componentDidUpdate() {
-        console.log('componentDidUpdate')
+        console.log('componentDidUpdate...Goodbye')
     }
     state = {
         count: 0
