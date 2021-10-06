@@ -8,9 +8,15 @@
 * 총 10가지의 함수가 존재하며, will이 붙은 함수는 어떤 작업을 하기 전에 실행되고, did가 붙은 함수는 작업을 한 후에 실행됩니다. <br />
 * 어떤 작업을 수행할 때 렌더링 할 때 처리해야 하는 경우가 있고 업데이트 전후로 처리해야 하는 경우가 있는데 이럴 경우 라이프 사이클 함수를 이용해서 처리합니다.<br />
 * 컴포넌트의 라이프 사이클 : 마운트(페이지에 컴포넌트가 나타남) -> 업데이트(리렌더링) -> 언마운트(페이지에서 컴포넌트가 사라짐)<br />
+
+![j3.JPG](./img/j3.JPG) <br />
+
 <br />
 마운트 : DOM이 생성되고 웹 브라우저상에 나타나는 과정 <br />
 언마운트 : 마운트의 반대과정으로 DOM에서 컴포넌트를 제거하는과정 <br />
+
+![j4.JPG](./img/j4.JPG) <br />
+
 <br />
 
 업데이트 : 컴포넌트를 업데이트 하는 경우 <br />
@@ -18,6 +24,8 @@
 2.state가 바뀔 경우 <br />
 3.부모 컴퍼넌트가 리렌더링 할 경우 <br />
 4.this.forceUpdate로 강제로 렌더링을트리거 할 경우 <br />
+
+![j5.JPG](./img/j5.JPG) <br />
 
 #### 관련함수
 
@@ -42,45 +50,34 @@
 <br />
 4) componentDidMount()
 
-componentDidMount(){...}
-
-컴포넌트를 만들고 첫 렌더링을 마친 후 실행
-
-다른 자바스크립트 라이브러리나 프레임워크의 함수 호출, 이벤트 등록, setTimeout, setInterval, 네트워크 요청 등 비동기 작업 처리
-
+>componentDidMount(){...} <br />
+>컴포넌트를 만들고 첫 렌더링을 마친 후 실행 <br />
+>다른 자바스크립트 라이브러리나 프레임워크의 함수 호출, 이벤트 등록, setTimeout, setInterval, 네트워크 요청 등 비동기 작업 처리 <br />
+<br />
 5) shouldComponentUpdate()
 
-shouldComponentUpdate(nextProps, nextState) {...}
-
-props또는 state 변경 시 리렌더링을 시작할지 여부를 지정하는 함수
-
-반드시 true & false 반환 해야함
-
-현재 props, state 변경은 this키워드를 붙이고 새로 설정할 props, state는 nextProps, nextState로 접근
-
+>shouldComponentUpdate(nextProps, nextState) {...} <br />
+>props또는 state 변경 시 리렌더링을 시작할지 여부를 지정하는 함수 <br />
+>반드시 true & false 반환 해야함 <br />
+>현재 props, state 변경은 this키워드를 붙이고 새로 설정할 props, state는 nextProps, nextState로 접근 <br />
+<br />
   6) getSnapshotBeforeUpdate()
 
-v16.3 이후 만든 메소드
-
-ender 메소드를 호출한 후 DOM에 변화를 반영하기 바로 직전에 호출하는 함수
-
-componentDidUpdate에서 세번 째 파라미터인 snapshot 값으로 전달 받을 수 있는데 주로 업데이트 하기 직전의 값을 참고할일이 있을 때
-
+>v16.3 이후 만든 메소드 <br />
+>ender 메소드를 호출한 후 DOM에 변화를 반영하기 바로 직전에 호출하는 함수 <br />
+>componentDidUpdate에서 세번 째 파라미터인 snapshot 값으로 전달 받을 수 있는데 주로 업데이트 하기 직전의 값을 참고할일이 있을 때 <br />
+<br />
   7) componentDidUpdate()
 
-componentDidUpdate(prevProps, prevState, snapshot) {...}
-
-prevProps, prevState 사용하여 이전에 가졌던 데이터에 접근
-
-getSnapshotBeforeUpdate에서 반환한 값이 있다면 여기서 snapshot 값을 전달 받을 수 있음
-
+>componentDidUpdate(prevProps, prevState, snapshot) {...} <br />
+>prevProps, prevState 사용하여 이전에 가졌던 데이터에 접근 <br />
+>getSnapshotBeforeUpdate에서 반환한 값이 있다면 여기서 snapshot 값을 전달 받을 수 있음 <br />
+<br />
 8) componentWillUnmount()
 
-componentWillUnmount(){...}
-
-DOM에서 제거할 때 실행
-
-componentDidMount에서 등록한 이벤트, 타이머, 직접 생성한 DOM이 있다면 여기에서 제거 작업
+>componentWillUnmount(){...} <br />
+>DOM에서 제거할 때 실행 <br />
+>componentDidMount에서 등록한 이벤트, 타이머, 직접 생성한 DOM이 있다면 여기에서 제거 작업 <br />
 
 ## [09월 29일]
 
