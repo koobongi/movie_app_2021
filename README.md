@@ -2,7 +2,7 @@
 
 ## [11월 10일]
 
-
+최종배포 : https://koobongi.github.io/movie_app_2021
 
 ## [10월 06일]
 
